@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "run-p -l dev:app dev:server",
+    "build": "prisma generate && vite build",
+    "postinstall": "prisma generate",
     "dev:app": "vite",
     "dev:server": "tsx watch server/main.ts",
     "check": "run-s lint ts",
