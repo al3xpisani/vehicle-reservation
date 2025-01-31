@@ -63,7 +63,7 @@ export function SearchPage() {
               <div className='col-span-12 flex items-end px-4 md:col-span-3'>
                 <div className='flex w-full flex-col items-center'>
                   <img
-                    src='public/logo.svg'
+                    src='/logo.svg'
                     alt='Workoast Logo'
                     width={64}
                     className='box-shadow-[inset_0_0_0_2px_black] rounded-full border-2 border-black bg-black transition-transform duration-300 ease-in-out hover:scale-125'

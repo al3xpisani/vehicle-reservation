@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@libsql/client": "^0.8.1",
+    "@prisma/adapter-libsql": "^6.3.0",
     "@prisma/client": "^5.19.1",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -59,6 +61,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.7",
     "embla-carousel-react": "^8.3.0",
     "express": "^4.21.0",
     "input-otp": "^1.2.4",
