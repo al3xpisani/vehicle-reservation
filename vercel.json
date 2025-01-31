@@ -1,11 +1,6 @@
 {
   "builds": [
     {
-      "env": {
-        "DATABASE_URL": "file:./prisma/dev.db"
-      }
-    },
-    {
       "src": "index.html",
       "use": "@vercel/static"
     },
