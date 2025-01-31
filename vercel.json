@@ -9,6 +9,12 @@
       "use": "@vercel/node"
     }
   ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/main.ts"
+    }
+  ],
   "rewrites": [
     {
       "source": "/trpc/(.*)",
