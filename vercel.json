@@ -1,13 +1,23 @@
 {
-  "build": {
-    "env": {
-      "DATABASE_URL": "file:./prisma/dev.db"
+  "builds": [
+    {
+      "env": {
+        "DATABASE_URL": "file:./prisma/dev.db"
+      }
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "server/main.ts",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "prisma/dev.db"
+      "source": "/trpc/(.*)",
+      "destination": "/api"
     }
   ]
 }

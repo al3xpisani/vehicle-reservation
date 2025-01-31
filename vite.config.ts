@@ -7,16 +7,18 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './app')
-    }
+      '@': path.resolve(__dirname, './app'),
+    },
   },
   server: {
     proxy: {
       '/trpc': {
-        target: 'http://localhost:4000',
+        target: 'http://localhost:4000/api',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/trpc/, '')
-      }
-    }
-  }
+        rewrite: (path) => {
+          return path.replace(/^\/trpc/, '');
+        },
+      },
+    },
+  },
 });

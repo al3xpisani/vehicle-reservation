@@ -12,9 +12,9 @@ app.use('/panel', (_, res) =>
 );
 
 app.use(
-  '/',
+  '/api',
   createExpressMiddleware({
-    router: appRouter
+    router: appRouter,
   })
 );
 
