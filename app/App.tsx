@@ -7,16 +7,16 @@ import { ReviewPage } from './pages/ReviewPage';
 import { trpc } from './trpc';
 import { ConfirmationPage } from '@/pages/ConfirmationPage.tsx';
 
+
 function App() {
   const [queryClient] = useState(() => new QueryClient());
-
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: '/trpc'
-        })
-      ]
+          url: import.meta.env.VITE_VERCEL_APP,
+        }),
+      ],
     })
   );
 
@@ -25,10 +25,10 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Router>
           <Routes>
-            <Route path="/" element={<SearchPage />} />
-            <Route path="/review" element={<ReviewPage />} />
+            <Route path='/' element={<SearchPage />} />
+            <Route path='/review' element={<ReviewPage />} />
             <Route
-              path="/confirmation/:reservationId"
+              path='/confirmation/:reservationId'
               element={<ConfirmationPage />}
             />
           </Routes>
