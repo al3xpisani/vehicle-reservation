@@ -1,11 +1,20 @@
 {
   "builds": [
     {
-      "src": "dist/**/*",
+      "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "server/main.ts",
+      "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/index.html" }],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/main.ts"
+    }
+  ],
   "rewrites": [
     {
       "source": "/trpc/(.*)",
