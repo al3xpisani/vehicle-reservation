@@ -3,5 +3,11 @@
     "env": {
       "DATABASE_URL": "file:./prisma/dev.db"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "prisma/dev.db"
+    }
+  ]
 }
